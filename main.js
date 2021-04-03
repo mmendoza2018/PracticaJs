@@ -1,7 +1,37 @@
 
+(async () => {
+
+  const { value: password } = await Swal.fire({
+    title: 'Ingrese la contraseña',
+    input: 'password',
+    inputPlaceholder: 'Ingrese la contraseña',
+    allowOutsideClick:false,
+    backdrop:"#D5DBDB ",
+    inputAttributes: {
+      maxlength: 20,
+      autocapitalize: 'off',
+      autocorrect: 'off'
+    },
+    preConfirm: (res) => {
+      if (res=="" || res==null || res!=="2018") {
+        Swal.showValidationMessage(
+          `La contraseña es incorrecta`
+         )
+        }
+      }
+  })
+  if (password) {
+    if (password==="2018") {
+      Swal.fire({
+        title: `Bienvenido!`,
+        icon:"success"
+      })
+    } 
+  }
+  })()
+/*dsadsadad */
 let objetClases = {
-    DomClases:{nombre:"clases de dom manejp de estilos con css "},
-    DomApis:{nombre:"clases de dom manejp de estilos con css "}
+    DomClases:{nombre:"clases de dom manejp de estilos con css "}
 }
 console.log(`objetClases`,(Object.keys(objetClases)).length )
 let accordion=` <div class="accordion mt-5" id="accordionExample">`;
@@ -22,3 +52,4 @@ for (let i = 0; i < (Object.keys(objetClases)).length; i++) {
   accordion+=accordion;
 }
 accordion+=`</div>`;
+document.querySelector("#accordion").innerHTML=accordion;
