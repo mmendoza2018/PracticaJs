@@ -1,0 +1,61 @@
+orueba
+ <nav id="nav">
+        
+        <h1 class="text-center"> este es el ejercicio 1</h1>
+    </nav>
+    <div class="row">
+        <div class="col-sm-2 bg-warning" id="sidebar">
+            <aside>
+            <lu>
+                <li>tickets 01</li>
+                <li>tickets 01</li>
+                <li>tickets 01</li>
+                <li>tickets 01</li>
+                <li>tickets 01</li>
+            </lu>
+        </aside>
+        </div>
+        <div class="col-sm-10 col-md-10 bg-danger">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quod a nostrum dolorum tempora. Velit explicabo amet dolorum vitae aliquid fugit cumque, quos, odio reiciendis nobis odit deserunt ipsam sit.
+Eum corrupti assumenda saepe commodi voluptatum iure nisi vero nesciunt illo adipisci voluptate aliquam totam voluptates explicabo tenetur fugiat, blanditiis, quasi quae, deleniti nulla minus? Nesciunt ratione magni alias aperiam!
+Neque a architecto hic ipsam ut unde laboriosam odit, molestiae magnam nobis voluptas eligendi sit ratione illum amet mollitia praesentium, quibusdam suscipit quasi saepe temporibus, impedit aspernatur! Aliquid, labore sunt?
+Dolorem itaque natus alias et, nulla distinctio voluptates error sint quidem repellat sapiente eligendi, quos placeat enim voluptatum. Mollitia iusto rem saepe corrupti nisi quaerat magni labore nemo esse molestiae?
+Assumenda excepturi, velit doloribus a fugiat et esse expedita amet totam non dolore, cupiditate debitis cum consequatur in enim illo. Ratione, unde quibusdam voluptatibus accusantium illum non recusandae molestias illo!
+        </div>
+    </div>
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">sidebar</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>.....</p>
+        </div>
+      </div>
+
+</body>
+<script>
+    let aside= document.getElementById("aside");
+    let papa= document.querySelector(".row");
+    let hijo= document.querySelector(".row #sidebar");
+      console.log(hijo);
+    
+    window.addEventListener("resize", ()=>{
+        console.clear();
+        let altura=window.innerHeight;
+     let ancho=window.innerWidth;
+        if(ancho<=415){
+            nav.innerHTML=`<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">sidebar</button>`;
+            papa.removeChild(hijo)
+
+        }else{
+            nav.innerHTML="<h1 class='text-center'> volvi de las cenisas</h1>"
+            papa.insertAdjacentElement("afterbegin", hijo);
+        }
+
+    console.log(altura=window.innerHeight,ancho=window.innerWidth);
+    })
+    
+
+</script>

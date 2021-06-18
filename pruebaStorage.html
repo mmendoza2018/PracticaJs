@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+ <meta charset="utf-8"> 
+ <title>API Web Storage</title> 
+
+</head> 472 | Página API Web Storage
+<style>
+    #cajaformulario { 
+ float: left; 
+ padding: 20px; 
+ border: 1px solid #999999; 
+} 
+#cajadatos { 
+ float: left; 
+ width: 400px; 
+ margin-left: 20px; 
+ padding: 20px; 
+ border: 1px solid #999999; 
+} 
+#clave, #texto { 
+ width: 200px; 
+} 
+#cajadatos > div { 
+ padding: 5px; 
+ border-bottom: 1px solid #999999; 
+}
+</style>
+<body> 
+ <section id="cajaformulario"> 
+ <form name="formulario"> 
+ <p><label>Clave: <input type="text" name="clave" 
+id="clave"></label></p> 
+ <p><label>Valor: <textarea name="texto" 
+id="texto"></textarea></label></p> 
+ <p><button type="button" id="grabar">Grabar</button>
+
+    <button type="button" id="delete">eliminar</button>
+    <button type="button" id="show">mostrar</button></p> 
+ </form> 
+ </section> 
+ <section id="cajadatos"> 
+<p>Información no disponible</p>
+ </section> 
+</body> 
+<script>
+    function iniciar() { 
+ var boton = document.getElementById("grabar"); 
+ boton.addEventListener("click", nuevoitem); 
+} 
+function nuevoitem() { 
+ var clave = document.getElementById("clave").value; 
+ var valor = document.getElementById("texto").value; 
+ sessionStorage.setItem(clave, valor); 
+ mostrar(clave); 
+} 
+function mostrar(clave) { 
+   
+ var cajadatos = document.getElementById("cajadatos"); 
+ cajadatos.innerHTML="";
+ var valor = sessionStorage.getItem(clave); 
+ for (var f = 0; f < sessionStorage.length; f++) { 
+ var clave = sessionStorage.key(f); 
+ var valor = sessionStorage.getItem(clave); 
+ cajadatos.innerHTML += "<div>" + clave + " - " + valor + "</div>"; 
+ }
+ 
+ 
+} 
+function eliminar () {
+     let llave = prompt("ingrese el dato eliminar")
+   if (confirm("esta seguro de eliminar este dato?")) {
+       sessionStorage.removeItem(llave)
+   }
+ }
+ 
+window.addEventListener("load", iniciar); 
+document.addEventListener("click", () => {
+    //let delete = document.querySelector("#delete")
+    if (event.target.matches("#delete")) {
+        eliminar();
+        mostrar()
+    }
+    if (event.target.matches("#show")) {
+        mostrar()
+    }
+});
+</script>
+</html> 
