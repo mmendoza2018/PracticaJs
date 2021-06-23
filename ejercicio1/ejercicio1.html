@@ -202,8 +202,6 @@ html {
       </div>
       <div class="row justify-content-center mt-3">
         <div class="col-6 d-flex bg-info " id="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/GeLbrYP__kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-
 
       </div>
       <div class="row justify-content-center mt-3">
@@ -212,12 +210,34 @@ html {
         </div>
       </div>
      
-      <button id="scroll" class="btn btn-warning fixed-bottom"><i class='bx bx-up-arrow'></i></button>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<!--   
-  List inline and focus in element widtsh js
+      <a id="scroll" class="btn btn-primary fixed-bottom px-0"><i class='bx bx-up-arrow'></i></a>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      
+      <div class="row border border-2 border-dark m-5 px-5 justify-content-center">
+        <h3 class="h3"> folrulario de abrir una ventana nueva  </h3>
+        <div class="col-5">
+          <form id="btnSubmit">
+            <input type="url" class="form-control" name="url" value="">
+            <label for="">height</label>
+            <input type="number" class="form-control" name="height" value="">
+            <label for="">width</label>
+            <input type="number" class="form-control" name="width" value="">
+          <button type="button" class="btn btn-sm btn-success float-end" id="cerrarVentana">cerrar</button>
+          <input type="submit" class="btn btn-sm btn-primary float-end"  value="Enviar">
+          </form>
+          
+        </div>
+        
+      </div>
+
+      <div class="row border border-2 border-dark m-5 px-5 justify-content-center">
+        <h3 class="h3 text-center"> user agent  </h3>
+        
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   
-  <div style="width: 200px; overflow-x: auto;" class=" d-flex align-content-center">
+  <!--
+      <div style="width: 200px; overflow-x: auto;" class=" d-flex align-content-center">
         <ul class="list-group list-group-horizontal" class=" d-flex align-content-center">
           <li class="list-group-item"><a href="#"> seccion 1 </a></li>
           <li class="list-group-item"> <a href="#">seccion 2 </a></li>
