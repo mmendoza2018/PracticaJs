@@ -8,6 +8,7 @@ import responsive from "../ejercicio1/responsive.js"
 import newVentana from "../ejercicio1/opemWindow.js"
 import userAgent from "./userAgent.js";
 import red from "./conexionRed.js";
+import webCam from "./webCam.js";
 
 darkMode("#darkMode", "data-dark", localStorage.getItem("darkMode"))
 
@@ -29,5 +30,5 @@ responsive(
 newVentana("#btnSubmit","#cerrarVentana")
 //userAgent();
 red()
-
+webCam();
 //tecla()

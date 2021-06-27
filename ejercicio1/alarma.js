@@ -13,7 +13,7 @@ export function alarma2 (id,fecha) {
 
         if (limiteTiempo<=0) {
             clearInterval(interval);
-            d.getElementById(id).innerHTML= "<h1>El timpo vencio :)</h1>";
+            d.getElementById(id).textContent= "<h1>El timpo vencio :)</h1>";
         }
     },1000)   
 
